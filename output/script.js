@@ -1,28 +1,27 @@
-function areAnagrams(str1, str2) {
-    var normalize = function (str) { return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join(''); };
-    return normalize(str1) === normalize(str2);
+function validAnagrams(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    var str1Map = {};
+    var str2Map = {};
+    for (var _i = 0, str1_1 = str1; _i < str1_1.length; _i++) {
+        var char = str1_1[_i];
+        str1Map[char] = (str1Map[char] || 0) + 1;
+    }
+    for (var _a = 0, str2_1 = str2; _a < str2_1.length; _a++) {
+        var char = str2_1[_a];
+        str2Map[char] = (str2Map[char] || 0) + 1;
+    }
+    for (var key in str1Map) {
+        if (!(key in str2Map)) {
+            return false;
+        }
+        if (str1Map[key] !== str2Map[key]) {
+            return false;
+        }
+    }
+    return true;
 }
-// Examples of anagrams
-var anagramPairs = [
-    ["listen", "silent"],
-    ["evil", "vile"],
-    ["restful", "fluster"],
-    ["admirer", "married"],
-    ["conversation", "voices rant on"]
-];
-// Examples of non-anagrams
-var nonAnagramPairs = [
-    ["hello", "world"],
-    ["example", "samples"],
-    ["anagram", "nagaram"],
-    ["binary", "brainy"],
-    ["night", "thing"]
-];
-console.log("Anagram Pairs:");
-anagramPairs.forEach(function (pair) {
-    console.log("".concat(pair[0], " and ").concat(pair[1], ": ").concat(areAnagrams(pair[0], pair[1])));
-});
-console.log("\nNon-Anagram Pairs:");
-nonAnagramPairs.forEach(function (pair) {
-    console.log("".concat(pair[0], " and ").concat(pair[1], ": ").concat(areAnagrams(pair[0], pair[1])));
-});
+validAnagrams('hello', 'world');
+validAnagrams('restful', 'fluster');
+validAnagrams('hello', 'world');
