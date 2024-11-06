@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile-js": "node compile.js",
+    "update-readme": "node updateReadme.js",
     "serve": "live-server output --port=8080",
     "start": "npm run serve"
   },
