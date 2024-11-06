@@ -9,7 +9,7 @@ function getProblemFiles(dir) {
   const sets = [];
 
   entries.forEach((entry) => {
-    if (entry.isDirectory() && entry.name.startsWith('set-')) {
+    if (entry.isDirectory()) {
       const setPath = path.join(dir, entry.name);
       const problemFiles = fs
         .readdirSync(setPath)
@@ -31,7 +31,7 @@ function getProblemFiles(dir) {
 function generateReadmeContent(sets) {
   let content = '# Data Structures and Algorithms in TypeScript\n\n';
   content += 'This project contains TypeScript implementations of common data structures and algorithms.\n\n';
-  content += '## Problems by Set\n\n';
+  content += '## Problems by Category\n\n';
 
   sets.forEach((set) => {
     content += `### ${set.setName}\n\n`;

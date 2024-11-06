@@ -2,7 +2,7 @@
 
 This project contains TypeScript implementations of common data structures and algorithms.
 
-## Problems by Set
+## Problems by Category
 
 ### set-01
 
