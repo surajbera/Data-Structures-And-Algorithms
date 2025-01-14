@@ -16,4 +16,5 @@ This project contains TypeScript implementations of common data structures and a
 - [02-employee-working-target-hours](src/simplest-dummy-problems/02-employee-working-target-hours.ts)
 - [03-add-digits](src/simplest-dummy-problems/03-add-digits.ts)
 - [04-string-reversal](src/simplest-dummy-problems/04-string-reversal.ts)
+- [05-valid-palindrome](src/simplest-dummy-problems/05-valid-palindrome.ts)
 
