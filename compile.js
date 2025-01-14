@@ -37,3 +37,12 @@ exec(`npx tsc ${path.join(srcDir, problemFile)} --outDir ${outputDir}`, (error, 
     console.error(`Compiled file not found: ${compiledFile}`); // Log error if compiled file is missing
   }
 });
+
+// Step 1:
+// `npm run compile-js simplest-dummy-problems/04-string-reversal.ts`
+
+// Step 2:
+// After step 1: script.js will get the compiled JS code from step 1
+
+// Step 3:
+// `npm run serve`
