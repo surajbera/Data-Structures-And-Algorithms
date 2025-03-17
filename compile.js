@@ -10,7 +10,7 @@ const outputDir = path.join(__dirname, 'output'); // Set the output directory pa
 // Execute TypeScript compiler command
 exec(`npx tsc ${path.join(srcDir, problemFile)} --outDir ${outputDir}`, (error, stdout, stderr) => {
   // Run TypeScript compiler on the input file and output to the specified directory
-  
+
   if (error) {
     console.error(`Compilation error: ${error}`); // Log any compilation errors
     return;
@@ -18,7 +18,7 @@ exec(`npx tsc ${path.join(srcDir, problemFile)} --outDir ${outputDir}`, (error, 
 
   // Extract the base name of the file (without extension)
   const baseName = path.basename(problemFile, '.ts');
-  
+
   // Define paths for the compiled and target files
   const compiledFile = path.join(outputDir, `${baseName}.js`); // Path of the compiled JavaScript file
   const targetFile = path.join(outputDir, 'script.js'); // Path for the renamed output file
@@ -39,7 +39,7 @@ exec(`npx tsc ${path.join(srcDir, problemFile)} --outDir ${outputDir}`, (error, 
 });
 
 // Step 1:
-// `npm run compile-js simplest-dummy-problems/04-string-reversal.ts`
+// `npm run compile-js simplest-problems/06-reverse-integer.ts`
 
 // Step 2:
 // After step 1: script.js will get the compiled JS code from step 1
